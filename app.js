@@ -1,6 +1,7 @@
 //let a;
 document.addEventListener('DOMContentLoaded', function() {
 
+//if you don't want ads running in the background, start deleting here
 const worker = new Worker('worker.js');
 worker.postMessage('start');
 
@@ -29,6 +30,9 @@ worker.addEventListener("message", function (e) {
             }
         });
     });
+
+//stop deleting here
+	
 document.addEventListener("keydown", (function(e) {
             switch (e.key) {
                 case "Enter":
