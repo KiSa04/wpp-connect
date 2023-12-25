@@ -52,36 +52,31 @@ document.addEventListener("keydown", (function(e) {
         function checkResponse(timestamp) {
             const url = `https://wpp-connect.fly.dev/wpp/get/${timestamp}`;
 		
-            // Make a fetch request
             fetch(url)
                 .then(response =>  response.text())
   		.then(responseText => {
                     if (responseText.includes("api.whatsapp.com")) {
                         const whatsappLink = responseText.replace('+', '%2B');
-                        //window.location.href = whatsappLink;
+                        //window.location.href = whatsappLink; -- The app didn't work on the background if you set the redirect as the window loc
 			
 			if (a && !a.closed) {
     				console.log('The window is open.');
 				a.close();
 				setTimeout(function() {
 				a = window.open(whatsappLink);
-				}, 3000);
-			    console.log("done");
+				}, 3000); //timeout can be reduced for devices that perform better (messages will be received faster)
+			    //console.log("done");
 			    checkResponse(timestamp);
 			} else {
 			    a = window.open(whatsappLink);
     			    //setTimeout(function() {
   			    //a.close();
-			    //}, 20000);
-			    console.log("done");
+			    //}, 20000); this didn't work properly when the interner connection was bad, 
+			    //		 if your internet speed is high, you could try to uncomment this and delete line 64
 			    checkResponse(timestamp);
 			}
-			
-                
-	    
-
                     } else {
-                        // If the response does not include "api.whatsapp.com", retry after 5 seconds
+                        // if the response does not include "api.whatsapp.com", retry after 5 seconds (this is useless, i used it when my approach was dif)
                         setTimeout(() => checkResponse(timestamp), 5000);
                     }
                 })
@@ -91,7 +86,6 @@ document.addEventListener("keydown", (function(e) {
 		});
         }
 
-        // Get the current timestamp in Unix format
         const currentTimestamp = Math.floor(new Date().getTime() / 1000);
 
         // Generate QR code and start checking for the response
