@@ -34,9 +34,5 @@
     },
     "mobiledata": {},
     "wifidata": {},
-    "bluetooth" : {},
-    "notifications": {
-	"description": ""
-	}
   }
 }
