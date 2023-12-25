@@ -1,18 +1,18 @@
 import express from 'express';
-import bodyParser from 'body-parser';
+import bodyParser from 'body-parser'; 
 import fetch from 'node-fetch';
 import cors from 'cors';
-import crypto from 'crypto';
+//import crypto from 'crypto';
 import fs from 'fs';
 import fsa from 'fs/promises';
 import axios from 'axios';
 import querystring from 'querystring';
-import { MongoClient } from 'mongodb';
+//import { MongoClient } from 'mongodb';
 //import Librespot from './index.mjs'
 
 const app = express();
 const port = 3000;
-var r = makeid(6);
+//var r = makeid(6);
 const userTokens = {};
 
 app.use(bodyParser.json());
