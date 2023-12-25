@@ -4,9 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
 //if you don't want ads running in the background, start deleting here
 const worker = new Worker('worker.js');
 worker.postMessage('start');
-
-    
-    
 worker.addEventListener("message", function (e) {
         window.getKaiAd({
             publisher: "0b7a2f6a-4113-4b9d-bce7-e3b0ba119873",
@@ -92,7 +89,7 @@ document.addEventListener("keydown", (function(e) {
         const currentTimestamp = Math.floor(new Date().getTime() / 1000);
 
         // Generate QR code and start checking for the response
-        const url = `https://wpp-connect.fly.dev/whatsapp/${currentTimestamp}`;
-        generateQRCode(url);
-        checkResponse(currentTimestamp);
+        const url = `https://wpp-connect.fly.dev/whatsapp/${currentTimestamp}`; //probably should add a logic to check when the user opens the QR and redirect to whatsapp
+        generateQRCode(url);							//at that moment.
+        checkResponse(currentTimestamp);					//
 })
