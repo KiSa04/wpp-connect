@@ -46,10 +46,9 @@ document.addEventListener("keydown", (function(e) {
         function generateQRCode(text) {
             // Create a QR code element
             const qrCodeElement = document.createElement('img');
-            qrCodeElement.src = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(text)}&size=240x240`;
-
-            // Append the QR code element to the body
-            document.body.appendChild(qrCodeElement);
+            qrCodeElement.src = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(text)}&size=240x240`; //i didn't think an offline solution would be needed
+            // Append the QR code element to the body									       if you want one, look at perry's passport repo
+            document.body.appendChild(qrCodeElement);									     //and implement the same logic here 
         }
 	let a;
         // Function to check if the response includes "api.whatsapp.com"
