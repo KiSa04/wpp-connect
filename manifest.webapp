@@ -1,0 +1,42 @@
+{
+  "version": "0.2.4",
+  "name": "Wpp connect",
+  "description": "Connect WhatsApp to PC",
+  "type": "privileged",
+  "fullscreen": "true",
+  "launch_path": "/index.html",
+  "icons": {
+    "56": "/images/x56.png",
+    "84": "/images/x84.png",
+    "112": "/images/x112.png"
+  },
+  "developer": {
+    "name": "Daniel",
+    "url": "https://example.com"
+  },
+  "dependencies": {
+		"ads-sdk": "1.5.8"
+	},
+  "categories": [
+    "social"
+  ],
+  "locales": {
+    "en-US": {
+      "name": "Wpp connect",
+      "subtitle": "Connect WhatsApp to PC",
+      "description": "Since whatsapp to KaiOS does not have a web version, use PC to Whatsapp to send messages from your PC or smartphone"
+    }
+  },
+  "default_locale": "en-US",
+  "permissions": {
+    "systemXHR": {
+      "description": "Required to bypass CORS limitations."
+    },
+    "mobiledata": {},
+    "wifidata": {},
+    "bluetooth" : {},
+    "notifications": {
+	"description": ""
+	}
+  }
+}
